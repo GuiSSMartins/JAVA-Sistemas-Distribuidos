@@ -9,6 +9,13 @@ public class Main {
 }
 ```
 
+"Lançar" EXCEÇÕES específicas:
+```java
+throw
+```
+
+Escrever Novas Exceções:
+
 Ler ficheiros:
 ```java
 p
