@@ -1,4 +1,10 @@
 
+
+## Funções para a Thraed
+```java
+ // .start() -> Iniciar uma thread (!!! Não esquecer de fazer "new" à classe Thread !!!)
+```
+
 ## Criação de uma Thread
 
 ```java
