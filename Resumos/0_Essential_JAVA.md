@@ -28,3 +28,20 @@ Leitura de _Input_:
 
 
 Escrita num ficheiro de Output:
+
+
+_StringBuffer_ é "thread-safe" (e, por isso, mais lento)
+
+## 
+
+## Estruturas/Structs para armazenar dados
+
+- ArrayList (um array em forma de lista) 
+- HashMap
+- 
+
+## Collectors
+
+```java
+Map<String, Aluno>
+```
