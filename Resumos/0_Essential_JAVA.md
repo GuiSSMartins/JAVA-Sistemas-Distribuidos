@@ -14,6 +14,15 @@ public class Main {
 throw
 ```
 
+"Apanhar" EXCEÇÕES - Threads
+```java
+try {
+    threads[i].join();
+} catch (InterruptedException e) {
+    e.printStackTrace();
+}
+```
+
 Escrever Novas Exceções:
 
 Ler ficheiros:
