@@ -16,7 +16,7 @@ public class Main {
 
 Hierarquia: "extends"   Carro -> Toyota extends Carro
 
-ORDENAR dados de uma lista
+_Sort_ / ORDENAR dados de uma lista
 ```java
 public class PlayerAgeComparator implements Comparator<Player> {
     public int compare(Player firstPlayer, Player secondPlayer) {
