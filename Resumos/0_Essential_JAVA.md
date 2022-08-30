@@ -15,12 +15,17 @@ public class Main {
 ```
 
 Hierarquia: "extends"   Carro -> Toyota extends Carro
+            "implements"   ->  
+            (exemplo)
 
-_Sort_ / ORDENAR dados de uma lista
+_Sort_ / ORDENAR dados de uma lista    ->   "implements Comparator< Nome_da_classe >
 ```java
 public class PlayerAgeComparator implements Comparator<Player> {
-    public int compare(Player firstPlayer, Player secondPlayer) {
-       return Integer.compare(firstPlayer.getAge(), secondPlayer.getAge());
+
+    // Função para Ordenae por ordem Crescente (naturalmente, sem criação de 
+    // Equação: OtherPlayer - Player
+    public int compareTo(Player otherPlayer) {
+        return Integer.compare(getRanking(), otherPlayer.getRanking());
     }
 }
 ```
