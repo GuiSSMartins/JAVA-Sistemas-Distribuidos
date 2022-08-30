@@ -4,10 +4,17 @@ Código Inicial (ler argumentos
 ```java
 public class Main {
     public static void main(String[] args) {
-    
+        
+        // Para ler os vários argumentos recebidos, usamos uma iteração
+        int length = args.length();
+        for (int i=0; i<length; i++) {
+        
+        }
     }
 }
 ```
+
+
 
 "Lançar" EXCEÇÕES específicas:
 ```java
