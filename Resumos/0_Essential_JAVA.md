@@ -14,8 +14,15 @@ public class Main {
 }
 ```
 
+Hierarquia: "extends"   Carro -> Toyota extends Carro
+
 ORDENAR dados de uma lista
 ```java
+public class PlayerAgeComparator implements Comparator<Player> {
+    public int compare(Player firstPlayer, Player secondPlayer) {
+       return Integer.compare(firstPlayer.getAge(), secondPlayer.getAge());
+    }
+}
 ```
 
 "Lançar" EXCEÇÕES específicas:
