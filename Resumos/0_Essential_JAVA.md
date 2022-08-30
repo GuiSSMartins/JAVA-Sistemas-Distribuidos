@@ -8,13 +8,15 @@ public class Main {
         // Para ler os vários argumentos recebidos, usamos uma iteração
         int length = args.length();
         for (int i=0; i<length; i++) {
-        
+             System.out.println(args[i]);
         }
     }
 }
 ```
 
-
+ORDENAR dados de uma lista
+```java
+```
 
 "Lançar" EXCEÇÕES específicas:
 ```java
