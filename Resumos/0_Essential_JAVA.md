@@ -44,7 +44,13 @@ try {
 }
 ```
 
-Escrever Novas Exceções:
+CRIAR Novas Exceções: (é preciso criar um novo ficheiro para a nova classe com a Exceção que queremos criar)
+DICA: Aproveitar ao máximo as propriedades da hierarquia de _Exceptions_ (__extends__)
+```java
+public class HOuseDoesntExist extends Exception {
+    public 
+}
+```
 
 Ler ficheiros:
 ```java
@@ -67,6 +73,7 @@ _StringBuffer_ é "thread-safe" (e, por isso, mais lento)
 ## Estruturas/Structs para armazenar dados
 
 - ArrayList (um array em forma de lista) 
+- HashSet - uma chave corresponde 
 - HashMap
 - 
 
