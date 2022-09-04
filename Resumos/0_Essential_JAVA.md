@@ -47,8 +47,10 @@ try {
 CRIAR Novas Exceções: (é preciso criar um novo ficheiro para a nova classe com a Exceção que queremos criar)
 DICA: Aproveitar ao máximo as propriedades da hierarquia de _Exceptions_ (__extends__)
 ```java
-public class HOuseDoesntExist extends Exception {
-    public 
+public class DeviceAlreadyExists extends Exception{
+    public DeviceAlreadyExists(String msg){
+        super(msg);
+    }
 }
 ```
 
