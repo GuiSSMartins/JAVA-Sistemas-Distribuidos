@@ -74,10 +74,12 @@ _StringBuffer_ é "thread-safe" (e, por isso, mais lento)
 
 ## Estruturas/Structs para armazenar dados
 
-- ArrayList (um array em forma de lista) 
-- HashSet - uma chave corresponde 
+- __ArrayList__ (um array em forma de lista) 
+- HashSet - !!! WARNING !!! : Evitar usar; por favor, use uma __HashMap__
 - HashMap
 - 
+
+## Como criar um _Comparator_ para ordenar _ArrayList_'s e _Streams_
 
 ## Collectors
 
