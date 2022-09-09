@@ -72,6 +72,10 @@ _StringBuffer_ é "thread-safe" (e, por isso, mais lento)
 
 ## 
 
+```java
+private Map<String, Item> stock = new HashMap<>();
+```
+
 ## Estruturas/Structs para armazenar dados
 
 - __ArrayList__ (um array em forma de lista) 
