@@ -90,3 +90,18 @@ private Map<String, Item> stock = new HashMap<>();
 ```java
 Map<String, Aluno>
 ```
+
+
+
+
+- EXTRAS
+```java
+switch (variable) {                 // variable must be of the correct type 
+  case 1: doSomething();
+    break;                          // don't forget the break
+  case 2: doSomethingElse();
+    break;
+  default: doSomethingDefault();
+    break;
+}
+```
