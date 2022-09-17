@@ -1,6 +1,8 @@
 # Código mais importante para JAVA (em Sistemas Distribuídos - SD)
 
-Código Inicial (ler argumentos
+-------------------------------------------------------------------
+
+Código Inicial (ler argumentos do comando de execução do programa)
 ```java
 public class Main {
     public static void main(String[] args) {
