@@ -1,4 +1,4 @@
-# Código mais importante para JAVA (em Sistemas Distribuídos)
+# Código mais importante para JAVA (em Sistemas Distribuídos - SD)
 
 Código Inicial (ler argumentos
 ```java
@@ -14,8 +14,14 @@ public class Main {
 }
 ```
 
----------------------------------------------------------
+----------------------------------------------------------
+Coisas mais simples
 
+```java
+int[] other = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}; // array
+```
+
+---------------------------------------------------------
 Ler conteúdo do ecrã
 
 ```java
