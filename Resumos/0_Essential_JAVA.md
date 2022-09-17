@@ -14,6 +14,8 @@ public class Main {
 }
 ```
 
+---------------------------------------------------------
+
 Ler conteúdo do ecrã
 
 ```java
@@ -23,6 +25,7 @@ System.out.println(line);                 // Printing out the line
 int number = scanner.nextInt();           // We can also read primitive types
 ```
 
+--------------------------------------------------------------------
 
 Hierarquia: "extends"   Carro -> Toyota extends Carro
             "implements"   ->  
