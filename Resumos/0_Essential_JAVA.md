@@ -14,6 +14,16 @@ public class Main {
 }
 ```
 
+Ler conteúdo do ecrã
+
+```java
+Scanner scanner = new Scanner(System.in); // Instantiating a new Scanner object
+String line = scanner.nextLine();         // Reading a line
+System.out.println(line);                 // Printing out the line
+int number = scanner.nextInt();           // We can also read primitive types
+```
+
+
 Hierarquia: "extends"   Carro -> Toyota extends Carro
             "implements"   ->  
             (exemplo)
