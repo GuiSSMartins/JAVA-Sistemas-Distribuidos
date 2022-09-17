@@ -45,6 +45,8 @@ Hierarquia: "extends"   Carro -> Toyota extends Carro
             "implements"   ->  
             (exemplo)
 
+Polimorfismo: _Um simples símbolo pode representar diferentes tipos_
+
 _Sort_ / ORDENAR dados de uma lista    ->   "implements Comparator< Nome_da_classe >
 ```java
 public class PlayerAgeComparator implements Comparator<Player> {
