@@ -171,7 +171,7 @@ switch (variable) {                 // variable must be of the correct type
 }
 ```
 
-Criar clones de estruturas
+### Criar clones de estruturas
 ```java
 public class Light implements Cloneable{
   public Object clone() throws CloneNotSupportedException {
@@ -180,4 +180,14 @@ public class Light implements Cloneable{
 }
 
 Light another = light.clone();
+```
+
+--------------------------------------------------------
+
+### Método _to String_ para cada estrutura
+
+```java
+public String toString() {
+    return "Point (" + x + ", " + y + ")";
+}
 ```
