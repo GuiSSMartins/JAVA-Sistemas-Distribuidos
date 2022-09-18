@@ -136,3 +136,14 @@ switch (variable) {                 // variable must be of the correct type
     break;
 }
 ```
+
+Criar clones de estruturas
+```java
+public class Light implements Cloneable{
+  public Object clone() throws CloneNotSupportedException {
+    return super.clone();
+  }
+}
+
+Light another = light.clone();
+```
