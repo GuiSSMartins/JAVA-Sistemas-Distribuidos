@@ -49,6 +49,26 @@ Hierarquia: "extends"   Carro -> Toyota extends Carro
 
 Polimorfismo: _Um simples símbolo pode representar diferentes tipos_
 
+
+
+```java
+// Exemplo de HERANÇA
+public class Animal {
+  public void talk() { System.out.println("Animal says:"); }
+}
+
+public class Dog extends Animal {
+  public void talk() { 
+    super.talk();
+    System.out.println("Woof!"); 
+  }
+}
+```
+
+
+--------------------------------------------------------------------------
+
+
 _Sort_ / ORDENAR dados de uma lista    ->   "implements Comparator< Nome_da_classe >
 ```java
 public class PlayerAgeComparator implements Comparator<Player> {
