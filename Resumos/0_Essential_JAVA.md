@@ -43,16 +43,13 @@ int number = scanner.nextInt();           // We can also read primitive types
 
 --------------------------------------------------------------------
 
-Hierarquia: "extends"   Carro -> Toyota extends Carro
-            "implements"   ->  
+Hierarquia: "extends"   Carro -> Toyota extends Carro  
             (exemplo)
 
 Polimorfismo: _Um simples símbolo pode representar diferentes tipos_
 
 
-
 ```java
-// Exemplo de HERANÇA
 public class Animal {
   public void talk() { System.out.println("Animal says:"); }
 }
@@ -62,6 +59,23 @@ public class Dog extends Animal {
     super.talk();
     System.out.println("Woof!"); 
   }
+}
+```
+
+Interface: "implements"   ->
+
+```java
+public interface Runner { public void run();  }
+public interface Walker { public void walk(); }
+public interface Eater  { public void eat();  }
+public abstract class Animal implements Eater, Walker{
+    public abstract void talk();
+}
+public class Dog extends Animal implements Runner {
+    public void talk() {  } // all these
+    public void eat()  {  } // methods
+    public void run()  {  } // have to be
+    public void walk() {  } // implemented
 }
 ```
 
