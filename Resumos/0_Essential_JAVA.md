@@ -119,10 +119,29 @@ public class DeviceAlreadyExists extends Exception{
 }
 ```
 
-Ler ficheiros:
+------------------------------------------------------
+
+### Ler ficheiros (PARSING de dados):
 ```java
-p
+public class ReadFile {
+  public static void main(String[] args) {
+    try {
+      File myObj = new File("filename.txt");
+      Scanner scanner = new Scanner(myObj);
+      while (myReader.hasNextLine()) {
+        String data = scanner.nextLine();
+      }
+      scanner.close();
+    } 
+    catch (FileNotFoundException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
+  }
+}
 ```
+
+------------------------------------------------------------
 
 Parsing de dados de ficheiros:
 
