@@ -145,7 +145,7 @@ private Map<String, Item> stock = new HashMap<>();
 
 - __ArrayList__ (um array em forma de lista) 
 - HashSet - !!! WARNING !!! : Evitar usar; por favor, use uma __HashMap__
-- HashMap
+- HashMap - a cada chave está associada uma 
 - 
 
 ## Como criar um _Comparator_ para ordenar _ArrayList_'s e _Streams_
@@ -162,21 +162,21 @@ Map<String, Aluno>
 - EXTRAS
 ```java
 switch (variable) {                 // variable must be of the correct type 
-  case 1: doSomething();
-    break;                          // don't forget the break
-  case 2: doSomethingElse();
-    break;
-  default: doSomethingDefault();
-    break;
+    case 1: doSomething();
+        break;                          // don't forget the break
+    case 2: doSomethingElse();
+        break;
+    default: doSomethingDefault();
+        break;
 }
 ```
 
 ### Criar clones de estruturas
 ```java
 public class Light implements Cloneable{
-  public Object clone() throws CloneNotSupportedException {
-    return super.clone();
-  }
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }
 
 Light another = light.clone();
@@ -190,4 +190,9 @@ Light another = light.clone();
 public String toString() {
     return "Point (" + x + ", " + y + ")";
 }
+```
+
+### Deep-COpy de ArrayList<>
+```java
+
 ```
