@@ -159,10 +159,11 @@ sb.append("Java");
 ```
 
 
-## 
+## ATENÇÃO à maneira como iniciar as estruturas em JAVA
 
 ```java
 private Map<String, Item> stock = new HashMap<>();
+private List<File> list = new ArrayList<>();
 ```
 
 ## Estruturas/Structs para armazenar dados
