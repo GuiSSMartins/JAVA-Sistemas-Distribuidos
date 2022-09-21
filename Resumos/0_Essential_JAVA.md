@@ -1,5 +1,8 @@
 # Código mais importante para JAVA (para todas as UC's do 3º ano - 1º semestre)
 
+Programas úteis:
+- __JDBC__ (_Java Database Connectivity_)
+
 -------------------------------------------------------------------
 
 Código Inicial (ler argumentos do comando de execução do programa)
