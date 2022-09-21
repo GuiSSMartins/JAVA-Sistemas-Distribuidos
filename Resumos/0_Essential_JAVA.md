@@ -152,7 +152,12 @@ Leitura de _Input_:
 Escrita num ficheiro de Output:
 
 
-_StringBuffer_ é "thread-safe" (e, por isso, mais lento)
+### _StringBuffer_ é "thread-safe" (e, por isso, mais lento)
+```java
+StringBuffer sb=new StringBuffer("Hello ");  
+sb.append("Java");
+```
+
 
 ## 
 
