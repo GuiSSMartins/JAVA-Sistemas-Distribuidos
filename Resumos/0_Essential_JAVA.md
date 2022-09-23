@@ -9,7 +9,6 @@ Código Inicial (ler argumentos do comando de execução do programa)
 ```java
 public class Main {
     public static void main(String[] args) {
-        
         // Para ler os vários argumentos recebidos, usamos uma iteração
         int length = args.length();
         for (int i=0; i<length; i++) {
@@ -100,7 +99,9 @@ public class PlayerAgeComparator implements Comparator<Player> {
 
 "Lançar" EXCEÇÕES específicas:
 ```java
-throw
+public void someCode() throws VeryBadThingHappenedException {
+  throw new VeryBadThingHappenedException("Boom!");
+}
 ```
 
 "Apanhar" EXCEÇÕES - Threads
