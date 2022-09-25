@@ -1,7 +1,12 @@
 # Código mais importante para JAVA (para todas as UC's do 3º ano - 1º semestre)
 
-Programas úteis:
+### Programas úteis:
 - __JDBC__ (_Java Database Connectivity_): Construção de DAO (_Data Access _)
+- __MariaDB-Database__ (_My_SQLConnector_)
+
+------------------------------------------------------------------
+
+### Encapsulamento dos dados (OBRIGATÓRIO )
 
 -------------------------------------------------------------------
 
