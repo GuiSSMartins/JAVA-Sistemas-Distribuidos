@@ -181,6 +181,17 @@ private List<File> list = new ArrayList<>();
 - HashMap - a cada chave está associada uma 
 - 
 
+
+## Funções _Array_List_
+```java
+List<Animal> animals = new ArrayList<>();
+animals.add(new Dog());
+
+for (Animal animal : animals) {
+    animal.talk();
+}
+```
+
 ## Como criar um _Comparator_ para ordenar _ArrayList_'s e _Streams_
 
 ## Collectors
