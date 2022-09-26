@@ -177,15 +177,18 @@ private List<File> list = new ArrayList<>();
 ## Estruturas/Structs para armazenar dados
 
 - __ArrayList__ (um array em forma de lista) 
-- HashSet - !!! WARNING !!! : Evitar usar; por favor, use uma __HashMap__
-- HashMap - a cada chave está associada uma 
+- __HashMap__ - a cada chave está associada uma 
 - 
 
 
 ## Funções _Array_List_
 ```java
 List<Animal> animals = new ArrayList<>();
-animals.add(new Dog());
+animals.add(new Dog()); animal.add(car); // Cat cat = new Cat();
+
+animals.get(0);              // Element at position 0 (dog)
+animals.remove(0);                  // Removing element at position 0
+animals.remove(cat);                // Removing the cat
 
 for (Animal animal : animals) {
     animal.talk();
