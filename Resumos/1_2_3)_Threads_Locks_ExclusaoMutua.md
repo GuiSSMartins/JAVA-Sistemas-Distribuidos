@@ -20,7 +20,7 @@ public class Main {
 }
 
 // Técnica extra: t.sleep(5);
-// Colocamos a Thread não funciona durante 5 segundos. Só no final deste período de tempo
+// A Thread deixa de funcionar durante 5 segundos. Só no final deste período de tempo, é que volta a "estar no ativo".
 ```
 
 ## Guardar um conjunto de _Threads_ (para serem utilizadas _ao mesmo tempo_)
@@ -49,6 +49,8 @@ Quando é feito o _l.lock()_, apenas UMA Thread pode estar a funcionar essa zona
 
 __VANTAGENS__: (Relembrar caso do Acesso e Modificação de dados de um Banco) Garantimos que quando uma Thraed acede aos dados atualizados da variável/classe, estesnão estão a ser "mexidos" por uma outra Thread. Isto acontece porque as Thraeds partilham memória entre si. Por isso, o controlo da infromação que as Threads "tocam" é Muito Importante!
 
+Acessos concorrentes a recursos partilhados
+
 Exemplo de código onde se utilizam as funções:
 ```java
 Lock l = new ReentrantLock();
@@ -60,4 +62,11 @@ l.unlock();
 
 ## Técnicas de _Exclusão Mutua_
 
+- __Exclusão Mútua__: propriedade que _garante_ que dois processos ou threads não acedam simultaneamente a um recurso partilhado. 
+- __Secção Crítica__: parte do programa onde os recursos _partilhados_ são acedidos. É __FUNDAMENTAL__ proteger estas secção (como a utilização da _Exclusão Mútua_)
+
 Para que os Locks sejam aproveitados ao máximo, estes devem ser colcoados APENAS nas operações Atómicas - __Read e Write__ (como somas OU mudanças de sítio de certos dados)!
+
+Mas a melhor de controlarmos os casos de Read e de Write é utilizarmos uma versão mais específica de Locks.
+
+A classe __ReentrantReadWriteLock__ 
