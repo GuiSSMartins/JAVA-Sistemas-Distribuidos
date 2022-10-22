@@ -69,4 +69,6 @@ Para que os Locks sejam aproveitados ao máximo, estes devem ser colcoados APENA
 
 Mas a melhor de controlarmos os casos de Read e de Write é utilizarmos uma versão mais específica de Locks.
 
-A classe __ReentrantReadWriteLock__ 
+A classe __ReentrantReadWriteLock__ aumenta mais a concorrência dos programas já que faz a distinção entre os Locks para Read e para Write. 
+
+ATENÇÃO: Más escolhas do uso destes Locks podem provocar __Deadlocks__, ou seja, chega a um ponto do programa em que dois locks bloqueiam o programa
