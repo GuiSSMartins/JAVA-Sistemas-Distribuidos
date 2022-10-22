@@ -71,4 +71,8 @@ Mas a melhor de controlarmos os casos de Read e de Write é utilizarmos uma vers
 
 A classe __ReentrantReadWriteLock__ aumenta mais a concorrência dos programas já que faz a distinção entre os Locks para Read e para Write. 
 
-ATENÇÃO: Más escolhas do uso destes Locks podem provocar __Deadlocks__, ou seja, chega a um ponto do programa em que dois locks bloqueiam o programa
+__ATENÇÃO__: Más escolhas do uso destes Locks podem provocar __Deadlocks__, ou seja, chega a um ponto do programa em que dois locks bloqueiam o programa, já que estes estão à espera de serem _unlocked_.
+
+-------------------------------------
+
+TÉCNICA 1: 
