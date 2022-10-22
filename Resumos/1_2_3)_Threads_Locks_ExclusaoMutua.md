@@ -49,6 +49,15 @@ Quando é feito o _l.lock()_, apenas UMA Thread pode estar a funcionar essa zona
 
 __VANTAGENS__: (Relembrar caso do Acesso e Modificação de dados de um Banco) Garantimos que quando uma Thraed acede aos dados atualizados da variável/classe, estesnão estão a ser "mexidos" por uma outra Thread. Isto acontece porque as Thraeds partilham memória entre si. Por isso, o controlo da infromação que as Threads "tocam" é Muito Importante!
 
+Exemplo de código onde se utilizam as funções:
+```java
+Lock l = new ReentrantLock();
+//...
+l.lock();
+// Região Crítica, onde queremos limitar a entrada a 1 Thread de cada vez
+l.unlock();
+```
+
 ## Técnicas de _Exclusão Mutua_
 
-Para que os Locks sejam aproveitados ao máximo, estes devem ser colcoados APENAS nas operações Atómicas!
+Para que os Locks sejam aproveitados ao máximo, estes devem ser colcoados APENAS nas operações Atómicas - __Read e Write__ (como somas OU mudanças de sítio de certos dados)!
