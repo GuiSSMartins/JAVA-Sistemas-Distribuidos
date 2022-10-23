@@ -15,6 +15,8 @@ Lock l = new ReentrantLock();
 Condition c = l.newCondition(); // para gerir os sinais para este lock
 c.await(); // "unlocks" o lock & a Thread atual fica em espera até que seja notificada para retomar execução
 
+// DICA: A conição .wait() deve ser feita dentro de um corpo de um WHILE
+
 // Ativar as threads suspensas:
 c.signalAll(); // ativar todas as thraeds suspensas para resumirem a sua execução
 c.signal(); // notifica uma thread para resumir a sua execução
