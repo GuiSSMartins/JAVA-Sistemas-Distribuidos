@@ -9,9 +9,9 @@
 Como a comunicação deve ser fiável (ou seja, sem perda de dados e com entrega ordenada de mensagens).
 
 ## -> O que é um _Socket_?
-Sockets são estruturas que permitem 
+Socket é um mecanismo de comunicação usado normalmente para implementar um modelo cliente/servidor, que permita a troca de mensagens entre os processos de uma máquina/aplicação servidor e de uma máquina/aplicação cliente.
 
-## -> Paradigma Cliente-Servidor
+## -> Paradigma Cliente-Servidor (semelhante à lecionada )
 
 NORMALMENTE, o cliente inicia o contacto com o servidor.
 
