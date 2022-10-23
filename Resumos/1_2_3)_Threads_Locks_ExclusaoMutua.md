@@ -30,19 +30,17 @@ Por exemplo, queremos queexistam 10 threads a funcioanr simultaneamente.
 List<Thread> lt = new ArrayList<>();
 
 for(int i=0; i<10; i++) {
-  lt.add(new Thread(new Increment())); // Increment é só um exemplo de uma classe Runnable
-}
+  lt.add(new Thread(new Increment())); } // Increment é só um exemplo de uma classe Runnable
 
 for(int j=0; j<10; j++){
-  lt.get(j).start(); // Inicializamos cada uma das threads
-}
+  lt.get(j).start(); } // Inicializamos cada uma das threads
 
 for(int m=0; m<10; m++){
-  lt.get(m).join(); // O método da Thread pode terminar, mas a Thread continua em memória
-}
+  lt.get(m).join(); } // O método da Thread pode terminar, mas a Thread continua em memória
 ```
+-------------------------------------
 
-## Locks (Classe _ReentrantLock_)
+## -> Locks (Classe _ReentrantLock_)
 Os Locks são usados para limitar a entrada a APENAS 1 Thread Simultanea a uma região específica do código.
 
 Quando é feito o _l.lock()_, apenas UMA Thread pode estar a funcionar essa zona. Só quando essa Thread sair da região, é que outra pode entrar.
@@ -59,8 +57,9 @@ l.lock();
 // Região Crítica, onde queremos limitar a entrada a 1 Thread de cada vez
 l.unlock();
 ```
+-----------------------------------------
 
-## Técnicas de _Exclusão Mutua_
+## -> Técnicas de _Exclusão Mutua_
 
 - __Exclusão Mútua__: propriedade que _garante_ que dois processos ou threads não acedam simultaneamente a um recurso partilhado. 
 - __Secção Crítica__: parte do programa onde os recursos _partilhados_ são acedidos. É __FUNDAMENTAL__ proteger estas secção (como a utilização da _Exclusão Mútua_)
@@ -76,9 +75,9 @@ __ATENÇÃO__: Más escolhas do uso destes Locks podem provocar __Deadlocks__, o
 -------------------------------------
 
 - __l.readLock()__ _ou_ __.unlock()__: lock de Leitura, de acesso _partilhado_ (isto acontece porque, mesmo com muitos Readers, a informação não muda, por isso não faz mal haverem vários Readers a aceder a mesma varíavel/estrutura - são incapapzes de a mudar)
-- __l.writeLock().lock()__ _ou_ __.unlock()__: (NOTA: apenas uma Thread )
--
+- __l.writeLock().lock()__ _ou_ __.unlock()__: (NOTA: apenas uma Thread tem acesso à secção)
 
+---------------------------------------
 
+__TÉCNICA 1__: Criar um __ReentrantReadWriteLock__ para cada classe onde se quer concorrência.
 
-TÉCNICA 1: 
