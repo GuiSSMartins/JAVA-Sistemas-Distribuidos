@@ -1,37 +1,21 @@
-# 4) Uso de LOcks em _Condicionais_ (_if-then-else, while, for_...)
+(Guiões 4, 5 e 6)
+
+# 4) Uso de Locks em _Condicionais_ (_if-then-else, while, for_...)
 
 A partir deste momento, vamos voltar a usar algumas das noções lecionadas em SO ("_here we go again..._") sobre a comunição entre Clientes e Servidores, nomeadamente a relação e os cuidados a ter com os __Readers__ e com os __Writers__.
 
+__ATENÇÃO__: Locks NÃO é um conjunto de Threads!!! É apenas algo que limita a entrada a apenas 1 thread de cada vez na região crítica que limita.
+
 ```java
 Lock l = new ReentrantLock();
-Condition c = l.newCondition();
-c.await(); // atomically unlocks l and suspends, relocks l on wakeup
+Condition c = l.newCondition(); // para gerir os sinais para este lock
+c.await(); // "unlocks" o lock & as Threads ficam suspensas
 
-// Waking up suspended threads:
-c.signalAll(); // all threads
-c.signal(); // one thread
-
-// For a READER (#1):
-lock() {
-  // while(there is a writer)
-    wait…
-  nr_readers++
-}
-unlock() {
-  nr_readers--
-}
-
-// For a WRITER (#2):
-lock() {
-  // while(there is anyone (writer or reader))
-    wait…
-  a_writer = true
-}
-unlock() {
-  a_writer = false
-}
+// Ativar as threads suspensas:
+c.signalAll(); // ativar todas as thraeds suspensas
+c.signal(); // ativa apenas 1 thread suspensa
 ```
 
-Pelo código podemos perceber que:
+Temos de ter em conta (pensar sempre numa ideia intuitiva):
 - Enquanto houverem _Writers_ ativos, o READER não pode ler coisas;
-- Mas não podem coesxistir vaŕios writers e readers, quandio estamos num WRITER
+- Mas para um WRITER escrever algo, não podem coexistir outros Writers e Readers ativos.
