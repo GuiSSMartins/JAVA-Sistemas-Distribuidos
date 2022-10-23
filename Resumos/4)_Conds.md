@@ -2,7 +2,9 @@
 
 # 4) Uso de Locks em _Condicionais_ (_if-then-else, while, for_...)
 
-A partir deste momento, vamos voltar a usar algumas das noções lecionadas em SO ("_here we go again..._") sobre a comunição entre Clientes e Servidores, nomeadamente a relação e os cuidados a ter com os __Readers__ e com os __Writers__.
+A partir deste momento, vamos voltar a usar algumas das noções lecionadas em SO ("_here we go again..._") sobre a comunição entre Clientes e Servidores, nomeadamente a relação e os cuidados a ter com os __Readers__ e com os __Writers__, e ,por fim, os __SINAIS__ (para ).
+
+## -> Variáveis de Condição
 
 __ATENÇÃO__: Locks NÃO é um conjunto de Threads!!! É apenas algo que limita a entrada a apenas 1 thread de cada vez na região crítica que limita.
 
