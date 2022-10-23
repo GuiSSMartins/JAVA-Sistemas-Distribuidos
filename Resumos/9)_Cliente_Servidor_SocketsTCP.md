@@ -19,14 +19,18 @@ Sockets são estrturas que permitem
 
 ### .../ Cliente
 ```java
+# Criar socket e ligação com o servidor
 Socket socket = new Socket(address, port);
+# Abrir canais de escrita e leitura no socket
 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 PrintWriter out = new PrintWriter(socket.getOutputStream());
+# Ler e escrever nos canais de acordo com o protocolo de aplicação
 while(...) {
   out.println(…);
   out.flush();
   ... = in.readLine();
 }
+# Fechar socket e respetivos canais
 socket.shutdownOutput();
 socket.shutdownInput();
 socket.close();
