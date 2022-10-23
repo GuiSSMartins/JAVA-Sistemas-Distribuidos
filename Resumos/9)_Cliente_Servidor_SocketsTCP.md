@@ -25,7 +25,7 @@ Resumidamente, o SErvidor fica à espera de ligações num determinado porto. Qu
 ```java
 // Criar socket e ligação com o servidor
 Socket socket = new Socket(String host, int port);
-# Abrir canais de escrita e leitura no socket
+// Abrir canais de escrita e leitura no socket
 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 PrintWriter out = new PrintWriter(socket.getOutputStream());
 // Ler e escrever nos canais de acordo com o protocolo de aplicação
