@@ -54,8 +54,11 @@ Exemplo de código onde se utilizam as funções:
 Lock l = new ReentrantLock();
 //...
 l.lock();
-// Região Crítica, onde queremos limitar a entrada a 1 Thread de cada vez
-l.unlock();
+try{
+  // Região Crítica, onde queremos limitar a entrada a 1 Thread de cada vez
+} finally {
+  l.unlock();
+}
 ```
 -----------------------------------------
 
@@ -81,3 +84,6 @@ __ATENÇÃO__: Más escolhas do uso destes Locks podem provocar __Deadlocks__, o
 
 __TÉCNICA 1__: Criar um __ReentrantReadWriteLock__ para cada classe onde se quer concorrência.
 
+Quando fazemos a __recolha__ de _locks_, devemos sempre que possível 
+
+Muitos dos dados que queremos aceder, só o devem ser feitos após se terem recolhido todos os locks.
