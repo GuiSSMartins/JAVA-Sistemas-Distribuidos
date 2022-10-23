@@ -60,6 +60,11 @@ try{
   l.unlock();
 }
 ```
+
+Problemas que podemos encontrar:
+- _Race_: Não há controlo do uso das threads no acesso e modificação de dados. (_exemplo_: duas threads mexem ao mesmo tempo uma operação atómica, como a de uma _soma_ - __var++;__)
+- _Starvation_: Duas threads bloqueiam-se uma à outra, à espera de serem "_unlocked_", pelo que o programa nunca avança.
+
 -----------------------------------------
 
 ## -> Técnicas de _Exclusão Mutua_
