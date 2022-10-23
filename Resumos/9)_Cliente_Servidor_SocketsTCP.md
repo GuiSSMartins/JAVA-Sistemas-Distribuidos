@@ -8,19 +8,23 @@
 
 Como a comunicação deve ser fiável (ou seja, sem perda de dados e com entrega ordenada de mensagens).
 
+## -> O que é um _Socket_?
+Sockets são estruturas que permitem 
+
 ## -> Paradigma Cliente-Servidor
 
 NORMALMENTE, o cliente inicia o contacto com o servidor.
 
+Para tal, temos de distinguir dois tipos de Sockets: __Server Socket__ (associado ao Servidor) e o __Socket__ (associado ao Cliente), que são os dois extremos da conexão entre o Cliente-Servidor.
 
+Resumidamente, o SErvidor fica à espera de ligações num determinado porto. Quando o cliente se liga ao servidor, é estabelecida uma nova conexão bidirecional.
 
-## -> O que é um _Socket_?
-Sockets são estrturas que permitem 
+- Para ler e escrever no Socket: _BufferedReader_, _InputStreamReader_, _PrintWriter_.
 
 ### .../ Cliente
 ```java
 // Criar socket e ligação com o servidor
-Socket socket = new Socket(address, port);
+Socket socket = new Socket(String host, int port);
 # Abrir canais de escrita e leitura no socket
 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 PrintWriter out = new PrintWriter(socket.getOutputStream());
@@ -39,12 +43,9 @@ socket.close();
 ### .../ Servidor
 ```java
 // Criar novo server socket num dado porto
-ServerSocket sSock = new ServerSocket(port);
-// Aceitar conexões indefinidamente (Cliente vai ser responsável por terminar a conexão)
+ServerSocket sSock = new ServerSocket(int port);
+// Aceitar conexões indefinidamente (Bloquear até que uma conexão seja estabelecida)
 while (true) {
-  bloquear até que
-  uma conexão
-  seja estabelecida
   Socket clSock = sSock.accept();
   BufferedReader in = new BufferedReader(new InputStreamReader(clSock.getInputStream()));
   // Abrir canais de escrita e leitura no socket
