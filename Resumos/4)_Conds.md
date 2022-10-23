@@ -6,16 +6,18 @@ A partir deste momento, vamos voltar a usar algumas das noções lecionadas em S
 
 ## -> Variáveis de Condição
 
-__ATENÇÃO__: Locks NÃO é um conjunto de Threads!!! É apenas algo que limita a entrada a apenas 1 thread de cada vez na região crítica que limita.
+Permitem que thraeds suspendam/retomem a sua execução __dentro de secções críticas__, de acordo com uma dada condição.
+
+__ATENÇÃO__: Lock NÃO é um conjunto de Threads!!! É apenas algo que limita a entrada a apenas 1 thread de cada vez na região crítica que limita.
 
 ```java
 Lock l = new ReentrantLock();
 Condition c = l.newCondition(); // para gerir os sinais para este lock
-c.await(); // "unlocks" o lock & as Threads ficam suspensas
+c.await(); // "unlocks" o lock & a Thread atual fica em espera até que seja notificada para retomar execução
 
 // Ativar as threads suspensas:
-c.signalAll(); // ativar todas as thraeds suspensas
-c.signal(); // ativa apenas 1 thread suspensa
+c.signalAll(); // ativar todas as thraeds suspensas para resumirem a sua execução
+c.signal(); // notifica uma thread para resumir a sua execução
 ```
 
 Temos de ter em conta (pensar sempre numa ideia intuitiva):
