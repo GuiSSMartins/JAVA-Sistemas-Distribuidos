@@ -83,12 +83,22 @@ __ATENÇÃO__: Más escolhas do uso destes Locks podem provocar __Deadlocks__, o
 -------------------------------------
 
 - __l.readLock()__ _ou_ __.unlock()__: lock de Leitura, de acesso _partilhado_ (isto acontece porque, mesmo com muitos Readers, a informação não muda, por isso não faz mal haverem vários Readers a aceder a mesma varíavel/estrutura - são incapapzes de a mudar)
-- __l.writeLock().lock()__ _ou_ __.unlock()__: (NOTA: apenas uma Thread tem acesso à secção)
+- __l.writeLock().lock()__ _ou_ __.unlock()__: (NOTA: apenas uma Thread tem acesso à secçãocrítica para _leitura/escrita)
+
+__NOTA__: Muitos dos dados que queremos aceder, só o devem ser feitos após se terem recolhido todos os locks.
 
 ---------------------------------------
 
 __TÉCNICA 1__: Criar um __ReentrantReadWriteLock__ para cada classe onde se quer concorrência.
 
-Quando fazemos a __recolha__ de _locks_, devemos sempre que possível 
+Cuidado com as mudanças de lock (exemplo: primeiro fazer "unlock" da _Conta_ e só depois do _Banco_)
 
-Muitos dos dados que queremos aceder, só o devem ser feitos após se terem recolhido todos os locks.
+```java
+this.lockBanco.lock();
+Conta c;
+// código região crítica do Banco
+c.lock();
+this.lockBanco.unlock();
+try { return ...; } finally {
+c.unlock(); }
+```
