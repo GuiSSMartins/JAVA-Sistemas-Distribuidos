@@ -2,7 +2,11 @@
 
 (adaptado dos últimos slides das Aulas Práticas de Sistemas Distribuídos)
 
-(Relação com o trabalho de DNS de _Comunicações por Computador_ - DNS usa TCP como protocolo de transporte de dados
+(Relação com o trabalho de DNS de _Comunicações por Computador_ - DNS usa TCP como protocolo de transporte de dados)
+
+## -> Porquê TCP?
+
+Como a comunicação deve ser fiável 
 
 ## -> Paradigma Cliente-Servidor
 
