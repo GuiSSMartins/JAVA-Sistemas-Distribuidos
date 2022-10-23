@@ -75,4 +75,10 @@ __ATENÇÃO__: Más escolhas do uso destes Locks podem provocar __Deadlocks__, o
 
 -------------------------------------
 
+- __l.readLock()__ _ou_ __.unlock()__: lock de Leitura, de acesso _partilhado_ (isto acontece porque, mesmo com muitos Readers, a informação não muda, por isso não faz mal haverem vários Readers a aceder a mesma varíavel/estrutura - são incapapzes de a mudar)
+- __l.writeLock().lock()__ _ou_ __.unlock()__: (NOTA: apenas uma Thread )
+-
+
+
+
 TÉCNICA 1: 
