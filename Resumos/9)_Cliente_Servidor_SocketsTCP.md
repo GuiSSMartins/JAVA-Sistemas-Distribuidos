@@ -6,8 +6,11 @@
 
 ## -> Porquê TCP?
 
-Como a comunicação deve ser fiável 
+Como a comunicação deve ser fiável (ou seja, sem perda de dados e com entrega ordenada de mensagens)
 
 ## -> Paradigma Cliente-Servidor
 
+NORMALMENTE, o cliente inicia o contacto com o servidor.
+
 ## -> O que é um _Socket_?
+Sockets são estrturas que permitem 
