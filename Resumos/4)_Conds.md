@@ -25,3 +25,11 @@ c.signal(); // notifica uma thread para resumir a sua execução
 Temos de ter em conta (pensar sempre numa ideia intuitiva):
 - Enquanto houverem _Writers_ ativos, o READER não pode ler coisas;
 - Mas para um WRITER escrever algo, não podem coexistir outros Writers e Readers ativos.
+
+
+## -> Criar um sistema que implemente os Locks em vars. Condicionais
+
+CUIDADO: Nós queremos que uma mesma operação pode ser usadas várias vezes
+Uma espécie de Barreira à passagem de threads que impede de mais threads entrarem no processo enquanto outras não tiverem sido atiuvadas.
+
+Fazemos as coisas desta maneira para uma quantidade de threads atuem em processos ao mesmo tempo.
