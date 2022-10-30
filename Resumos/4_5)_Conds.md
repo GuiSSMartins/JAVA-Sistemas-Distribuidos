@@ -1,6 +1,6 @@
 (Guiões 4, 5 e 6)
 
-# 4) Uso de Locks em _Condicionais_ (_if-then-else, while, for_...)
+# 4 e 5) Uso de Locks em _Condicionais_ (_if-then-else, while, for_...)
 
 A partir deste momento, vamos voltar a usar algumas das noções lecionadas em SO ("_here we go again..._") sobre a comunição entre Clientes e Servidores, nomeadamente a relação e os cuidados a ter com os __Readers__ e com os __Writers__, e ,por fim, os __SINAIS__ (para ).
 
@@ -33,3 +33,8 @@ CUIDADO: Nós queremos que uma mesma operação pode ser usadas várias vezes
 Uma espécie de Barreira à passagem de threads que impede de mais threads entrarem no processo enquanto outras não tiverem sido atiuvadas.
 
 Fazemos as coisas desta maneira para uma quantidade de threads atuem em processos ao mesmo tempo.
+
+
+## -> Múltiplas Variáveis de Condição
+
+Em vez de estarmos a ter de criar uma Barreira para cada parte do programa onde se quer limitar o número de threads 
