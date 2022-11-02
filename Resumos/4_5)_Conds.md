@@ -35,6 +35,107 @@ Uma espécie de Barreira à passagem de threads que impede de mais threads entra
 Fazemos as coisas desta maneira para uma quantidade de threads atuem em processos ao mesmo tempo.
 
 
-## -> Múltiplas Variáveis de Condição
+## -> Múltiplas Variáveis de Condição (Ficha 5)
 
 Em vez de estarmos a ter de criar uma Barreira para cada parte do programa onde se quer limitar o número de threads 
+
+### Uso de Armazéns
+
+```java
+// Só vamos usar APENAS 1 Lock
+
+// Ver os slides das Multiplas vars de condições
+// Para entender melhor a dinâmica de locks, unlocks, awaits, e signalsAlls na parte dos testes dos Clientes
+
+class Warehouse {
+  private Lock l = new ReentrantLock(); // lock do armazém
+
+  private Map<String, Product> map =  new HashMap<String, Product>();
+
+  private class Product { 
+    Condition c = l.newCondition(); // condition isEmpty ====== condition exlusiva para este produto 
+                                    // deve ser criada uma condition para cada produto criado, para que se o signalAll() se aplique no prosuto específico
+    int quantity = 0; 
+  }
+
+  private Product get(String item) {
+    Product p;
+    l.lock();
+    try {
+      p = map.get(item);
+      if (p != null) return p;
+    }
+    finally {
+      l.unlock();
+    }
+    p = new Product();
+    map.put(item, p);
+    return p;
+  }
+
+  // Versão EGOÍSTA - cada cliente tenta apropriar-se dos itens o mais cedo possível
+  // Versão um pouco mais sequencial
+  // Deve-se evitar esta versão, porque os itens são logo consumidos sem necessidade
+
+  public void supply(String item, int quantity) throws InterruptedException {
+    l.lock();
+    try {
+      Product p = get(item);
+      p.quantity += quantity;
+      p.c.signalAll();
+    }
+    finally {
+      l.unlock();
+    }  
+  }
+
+  public void consume(Set<String> items) throws InterruptedException {
+    l.lock();  
+    try {
+      for (String s : items) {
+        Product p = get(s);
+        while(p.quantity == 0) {
+          p.c.await();
+        }
+        get(s).quantity--;
+      }
+    }
+    finally {
+      l.unlock();
+    }
+  }
+
+  // Versão COOPERATIVA - não reserva itens para clientes que não possam ser satisfeitos no momento (porque faltam alguns)
+  // Versão mais Segura
+  // Vamos usar a mesma versão do supply
+
+  public void consume(Set<String> items) throws InterruptedException {
+    HashMap<String, Integer> quantity_desired_items = new HashMap<String, Integer>();
+    for (String s : items) { // Vamos calcular a quantidade desejada de cada item
+      if (quantity_desired_items.containsKey(s)) {
+        Integer n = quantity_desired_items.get(s);
+        n++;
+        quantity_desired_items.put(s, n);
+      }
+      else {
+        quantity_desired_items.put(s, 1);
+      }
+    }
+
+    l.lock();  
+    try {
+      for (String s : quantity_desired_items.keySet()) {
+        Integer desired_quantity = quantity_desired_items.get(s);
+        Product p = get(s);
+        while(p.quantity < desired_quantity) {
+          p.c.await();
+        }
+        get(s).quantity -= desired_quantity;
+      }
+    }
+    finally {
+      l.unlock();
+    }
+  }
+}
+```
