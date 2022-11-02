@@ -109,6 +109,8 @@ class Warehouse {
   // Versão mais Segura
   // Vamos usar a mesma versão do supply
 
+  // Problema: há a possibilidade de STARVATION (de uma tarefa nunca terminar)
+  // SOLUÇÂO (ainda não implemntado): problema adicional
   public void consume(Set<String> items) throws InterruptedException {
     HashMap<String, Integer> quantity_desired_items = new HashMap<String, Integer>();
     for (String s : items) { // Vamos calcular a quantidade desejada de cada item
@@ -123,14 +125,24 @@ class Warehouse {
     }
 
     l.lock();  
+    int i=0;
+    int hash_length = quantity_desired_items.keySet().size();
     try {
+      while (i < hash_length) {
+        for (String s : quantity_desired_items.keySet()) {
+          Integer desired_quantity = quantity_desired_items.get(s);
+          Product p = get(s);
+          i++;
+          while(p.quantity < desired_quantity) {
+            p.c.await();
+            i=0;
+          }
+        }
+      }
       for (String s : quantity_desired_items.keySet()) {
         Integer desired_quantity = quantity_desired_items.get(s);
         Product p = get(s);
-        while(p.quantity < desired_quantity) {
-          p.c.await();
-        }
-        get(s).quantity -= desired_quantity;
+        p.quantity -= desired_quantity;
       }
     }
     finally {
@@ -138,4 +150,6 @@ class Warehouse {
     }
   }
 }
+
+// Starvation: a sua tarefa nunca consegue ser terminada
 ```
