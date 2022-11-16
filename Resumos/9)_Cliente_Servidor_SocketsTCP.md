@@ -1,15 +1,13 @@
-# Interação Cliente-Servidor com _Sockets_ TCP 
+# Cliente-Servidor com _Sockets_ TCP 
 
-(adaptado dos últimos slides das Aulas Práticas de Sistemas Distribuídos)
-
-(Relação com o trabalho de DNS de _Comunicações por Computador_ - DNS usa TCP como protocolo de transporte de dados)
+(Relação com o trabalho de DNS de _Comunicações por Computador_ - DNS usa TCP como protocolo para Transferência de Zona)
 
 ## -> Porquê TCP?
 
-Como a comunicação deve ser fiável (ou seja, sem perda de dados e com entrega ordenada de mensagens).
+A comunicação deve ser fiável (ou seja, sem perda de dados e com entrega ordenada de mensagens).
 
 ## -> O que é um _Socket_?
-Socket é um mecanismo de comunicação usado normalmente para implementar um modelo cliente/servidor, que permita a troca de mensagens entre os processos de uma máquina/aplicação servidor e de uma máquina/aplicação cliente.
+__Socket__: mecanismo de comunicação usado para implementar um modelo cliente/servidor, que permite a troca de mensagens entre os processos de um servidor e de um cliente.
 
 ## -> Paradigma Cliente-Servidor (semelhante à lecionada )
 
@@ -17,7 +15,7 @@ NORMALMENTE, o cliente inicia o contacto com o servidor.
 
 Para tal, temos de distinguir dois tipos de Sockets: __Server Socket__ (associado ao Servidor) e o __Socket__ (associado ao Cliente), que são os dois extremos da conexão entre o Cliente-Servidor.
 
-Resumidamente, o SErvidor fica à espera de ligações num determinado porto. Quando o cliente se liga ao servidor, é estabelecida uma nova conexão bidirecional.
+Resumidamente, o Servidor fica à espera de ligações num determinado porto. Quando o cliente se liga ao servidor, é estabelecida uma nova conexão bidirecional.
 
 - Para ler e escrever no Socket: _BufferedReader_, _InputStreamReader_, _PrintWriter_.
 
