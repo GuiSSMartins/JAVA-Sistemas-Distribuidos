@@ -9,7 +9,7 @@ A comunicação deve ser fiável (ou seja, sem perda de dados e com entrega orde
 ## -> O que é um _Socket_?
 __Socket__: mecanismo de comunicação usado para implementar um modelo cliente/servidor, que permite a troca de mensagens entre os processos de um servidor e de um cliente.
 
-## -> Paradigma Cliente-Servidor (semelhante à lecionada )
+## -> Paradigma Cliente-Servidor (semelhante à lecionada em SO - _Sistemas Operativos_)
 
 NORMALMENTE, o cliente inicia o contacto com o servidor.
 
@@ -18,6 +18,32 @@ Para tal, temos de distinguir dois tipos de Sockets: __Server Socket__ (associad
 Resumidamente, o Servidor fica à espera de ligações num determinado porto. Quando o cliente se liga ao servidor, é estabelecida uma nova conexão bidirecional.
 
 - Para ler e escrever no Socket: _BufferedReader_, _InputStreamReader_, _PrintWriter_.
+
+
+----------------------------------------------------------------
+
+## Como implementar um cliente e um Servidor da forma forma mais simples possível
+
+
+### Modelo de um Servidor que recebe conteúdos a partir 
+```java
+ServerSocket ss = new ServerSocket(24689);
+Socket socket = ss.accept();
+
+BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+PrintWriter out = new PrintWriter(socket.getOutputStream());
+
+            // Recebeu pedido de transf de zona "1;1;dominio"
+            String request = in.readLine();
+```
+
+
+
+
+
+-----------------------------------------------------------------
+
+(Coisas dos slides que não importam)
 
 ### .../ Cliente
 ```java
