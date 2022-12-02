@@ -40,6 +40,13 @@ String request = in.readLine();
 
 //Não vai receber mais nada do SS
 socket.shutdownInput();
+
+// enviar uma string para o out (apenas o escrevemos no buffer, ainda não é enviado)
+out.println(linhaBD);
+out.flush();
+
+socket.shutdownOutput();
+socket.close(); // este socket nunca é mais usado
 ```
 
 
