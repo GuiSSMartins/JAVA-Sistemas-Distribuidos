@@ -6,9 +6,15 @@
 
 ------------------------------------------------------------------
 
-### Encapsulamento dos dados (OBRIGATÓRIO )
+### Encapsulamento dos dados (OBRIGATÓRIO em DSS)
 
 -------------------------------------------------------------------
+
+### Utilização da função _super-
+
+Deve ser utilizada quando 
+
+-------------------------------------------------------
 
 Código Inicial (ler argumentos do comando de execução do programa)
 ```java
