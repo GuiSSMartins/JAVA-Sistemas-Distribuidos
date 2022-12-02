@@ -27,7 +27,7 @@ Resumidamente, o Servidor fica à espera de ligações num determinado porto. Qu
 Como existem diferentes maneiras de fazer 
 
 
-### Modelo de um Servidor que recebe conteúdos a partir 
+### -> Modelo de um Servidor que recebe conteúdos a partir 
 ```java
 ServerSocket ss = new ServerSocket(24689);
 Socket socket = ss.accept();
@@ -49,7 +49,7 @@ socket.shutdownOutput();
 socket.close(); // este socket nunca é mais usado
 ```
 
-
+###
 
 
 
