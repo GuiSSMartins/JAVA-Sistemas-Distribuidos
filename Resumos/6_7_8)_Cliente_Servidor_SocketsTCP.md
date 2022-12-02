@@ -22,7 +22,9 @@ Resumidamente, o Servidor fica à espera de ligações num determinado porto. Qu
 
 ----------------------------------------------------------------
 
-## Como implementar um cliente e um Servidor da forma forma mais simples possível
+## Como implementar um cliente e um Servidor da forma forma mais simples possível?
+
+Como existem diferentes maneiras de fazer 
 
 
 ### Modelo de um Servidor que recebe conteúdos a partir 
@@ -33,8 +35,11 @@ Socket socket = ss.accept();
 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 PrintWriter out = new PrintWriter(socket.getOutputStream());
 
-            // Recebeu pedido de transf de zona "1;1;dominio"
-            String request = in.readLine();
+// Recebeu pedido de transf de zona "1;1;dominio"
+String request = in.readLine();
+
+//Não vai receber mais nada do SS
+socket.shutdownInput();
 ```
 
 
